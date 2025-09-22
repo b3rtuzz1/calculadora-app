@@ -78,6 +78,35 @@ export default {
       this.setarValor();
     },
 
+    logBase10() {
+      this.valorCorrente = `${Math.log10(parseFloat(this.valorCorrente))}`;
+    },
+
+    logBaseX() {
+      if (this.numeroAnterior !== null) {
+        this.valorCorrente = `${Math.log(parseFloat(this.numeroAnterior)) / Math.log(parseFloat(this.valorCorrente))}`;
+        this.numeroAnterior = null;
+      }
+    },
+
+    aoQuadrado() {
+      this.valorCorrente = `${Math.pow(parseFloat(this.valorCorrente), 2)}`;
+    },
+
+    potenciaXY() {
+      this.operador = (num1, num2) => Math.pow(num1, num2);
+      this.setarValor();
+    },
+
+    raizQuadrada() {
+      this.valorCorrente = `${Math.sqrt(parseFloat(this.valorCorrente))}`;
+    },
+
+    raizXporY() {
+      this.operador = (num1, num2) => Math.pow(num1, 1 / num2);
+      this.setarValor();
+    },
+
     // Método responsável por apresentar o resultado das operações da Calculadora:
     resultado() {
       this.valorCorrente = `${this.operador(
