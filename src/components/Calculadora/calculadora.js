@@ -83,10 +83,21 @@ export default {
     },
 
     logBaseX() {
-      if (this.numeroAnterior !== null) {
-        this.valorCorrente = `${Math.log(parseFloat(this.numeroAnterior)) / Math.log(parseFloat(this.valorCorrente))}`;
-        this.numeroAnterior = null;
-      }
+      // Define o operador (num1 = número, num2 = base)
+      this.operador = (num1, num2) => {
+        const numero = parseFloat(num1);
+        const base = parseFloat(num2);
+
+        // validações básicas
+        if (Number.isNaN(numero) || Number.isNaN(base) || numero <= 0 || base <= 0 || base === 1) {
+          return NaN;
+        }
+
+        return Math.log(numero) / Math.log(base);
+      };
+
+      // Marca numeroAnterior e prepara o input para a base
+      this.setarValor();
     },
 
     aoQuadrado() {
