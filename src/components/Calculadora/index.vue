@@ -1,6 +1,12 @@
 <template>
   <div class="calculadora">
     <div class="display">{{valorCorrente || '0'}}</div>
+    <div v-on:click="somar" class="botao operadores2">log10</div>
+    <div v-on:click="dividir" class="botao operadores">x²</div>  
+    <div v-on:click="dividir" class="botao operadores">x^y</div>  
+    <div v-on:click="somar" class="botao operadores2">log(x)</div>
+    <div v-on:click="dividir" class="botao operadores">√</div>  
+    <div v-on:click="dividir" class="botao operadores">x^(1/y)</div>  
     <div v-on:click="limpar" class="botao">C</div>
     <div v-on:click="sinal" class="botao">+/-</div>
     <div v-on:click="porcentagem" class="botao">%</div>
